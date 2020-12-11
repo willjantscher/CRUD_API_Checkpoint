@@ -14,6 +14,11 @@ public class UserController {
         this.repository = repository;
     }
 
+    @GetMapping("/ping")
+    public String ping() {
+        return "pong";
+    }
+
     @GetMapping("/users")
     public String getUsers() {
         Optional<User> user = this.repository.findById(1l);
