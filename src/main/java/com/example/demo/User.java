@@ -2,6 +2,8 @@ package com.example.demo;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -15,6 +17,16 @@ public class User {
     @Column(columnDefinition = "email")
     private String email;
     private String password;
+
+    public String isAuthenticated() {
+        return "true";
+    }
+
+    public void setAuthenticated(boolean authenticated) {
+        this.authenticated = authenticated;
+    }
+
+    private boolean authenticated;
 
     public Long getId() {
         return id;
